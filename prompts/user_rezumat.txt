@@ -1,0 +1,78 @@
+Generează secțiunea 1: "Rezumat" (Summary) din Propunerea Tehnică de Execuție pentru un parc fotovoltaic.
+
+STRUCTURA EXACTĂ CERUTĂ (urmează această structură întocmai):
+
+## 1. Rezumat
+
+### 1.1 Date generale
+Scrie ca o listă de câmpuri cheie-valoare (NU paragrafe descriptive), exact în acest format:
+- Titlu contract: [din Anunțul de participare]
+- Ordonator principal de credite: [din documentele de intrare]
+- Tipul autorității contractante: [din Fișa de date]
+- Beneficiarul investiției: [numele beneficiarului]
+- Adresa beneficiar: [adresa completă]
+- Date de contact beneficiar: [email, telefon, fax]
+- Sursa de finanțare: [din documentele de intrare]
+- Locul principal de executare: [descriere detaliată cu suprafață teren, CAD, etc.]
+- Durata Contractului: [din Fișa de date]
+
+### 1.2 Obiectul contractului
+Scrie paragrafe continue și descriptive (NU liste cu bullets). Conținutul:
+- Primul paragraf: Scopul propunerii tehnice și angajamentul ofertantului
+- Al doilea paragraf: Descrierea tehnică a centralei (locație, putere instalată, configurație panouri, tip montaj)
+- Al treilea paragraf: Componente principale (invertoare, racordare, nivel tensiune)
+- Apoi o scurtă listă cu lucrările cuprinse (LES, PTAB, instalații electrice)
+
+#### 1.2.1. Obiectivele contractului
+Detalierea obiectivelor tehnice ale proiectului.
+
+### 1.3 Avantaje competitive ale prezentei propuneri tehnice
+IMPORTANT: Aceasta este cea mai lungă secțiune din Rezumat (aproximativ 3 pagini).
+Scrie paragrafe continue, dense și detaliate (NU liste scurte cu bullets). Acoperă TOATE aceste aspecte:
+
+1. Conformitate integrală și trasabilitate - controlul calității pe tot fluxul
+2. Respectarea principiului DNSH conform Regulamentului (UE) 2020/852
+3. Securizarea și organizarea șantierului - împrejmuire, semnalizare, acces controlat, pază
+4. Execuția etapizată pe tronsoane/zone cu program operațional
+5. Materiale și echipamente - noi, cu certificate de conformitate, declarații de performanță
+6. Resurse umane calificate, utilaje, echipamente de măsură și control
+7. Aprovizionare și logistică - gestionarea deșeurilor, evacuare materiale excavate
+8. Protecția utilităților și construcțiilor existente
+9. Managementul circulației - planul de restricții
+10. SSM pe toată durata contractului - instruire personal, prevenire riscuri
+11. Prevenirea și stingerea incendiilor
+12. Controlul calității - programe de control, jurnal de șantier
+13. Înregistrări de calitate - rezultate încercări, certificate, procese-verbale
+14. Protecția mediului - legislație, autorizații
+15. Lucrări ascunse - notificare, verificare
+
+La final, două sub-secțiuni scurte (o propoziție fiecare):
+#### 1.3.1. Garanția acordată lucrărilor
+"Garanția acordată lucrărilor din cadrul prezentei oferte este de {warranty_months} de luni."
+
+#### 1.3.2. Experiența deținută de către managerul de proiect
+"Experiența profesională specifică a managerului de proiect din cadrul prezentei oferte constă în peste {pm_experience} proiecte/contracte similare."
+
+IMPORTANT: Capitolul 1 se TERMINĂ cu 1.3.2. NU adăuga secțiune 1.4 sau alte secțiuni.
+
+DATELE COMPANIEI:
+- Lider asociere: {leader}
+- Asociat: {associate}
+- Subcontractant: {subcontractor}
+- Garanție: {warranty_months} luni
+- Experiență MP: {pm_experience}+ proiecte
+
+DOCUMENTE DE INTRARE:
+
+=== ANUNȚ DE PARTICIPARE ===
+{notice_text}
+
+=== FIȘA DE DATE ===
+{datasheet_text}
+
+=== AVIZ TEHNIC DE RACORDARE (ATR) ===
+{atr_text}
+{reference_block}
+Generează aproximativ 5 pagini de conținut. Scrie în limba română, formal și tehnic.
+Folosește formatarea markdown (## pentru titluri, ### pentru subtitluri, #### pentru sub-subtitluri, **bold** pentru text bold, - pentru bullets doar unde este specificat).
+Secțiunea 1.3 trebuie să fie FOARTE detaliată, cu paragrafe lungi și dense - aceasta este cea mai importantă parte.

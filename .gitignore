@@ -1,0 +1,23 @@
+# Secrets & local config (never commit real values)
+.env
+config/config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Input/output documents (large binary files, project-specific)
+input/
+output/
+
+# Context cache
+s01_context.json
+
+# Claude Code internal
+.claude/
+
+# Misc
+nul
+templates/

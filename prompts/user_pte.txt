@@ -1,0 +1,12 @@
+Transformă următoarea METODOLOGIE DE EXECUȚIE în format PROCEDURI TEHNICE DE EXECUȚIE (PTE) - Nivel 1.
+
+Pentru fiecare paragraf tehnic, creează o procedură cu format:
+**[Nume Operațiune Concis]**: [Descriere tehnică completă]
+
+Nu genera titluri, subtitluri sau separatoare. Scrie doar procedurile una după alta.
+
+METODOLOGIA DE EXECUȚIE{part_info}:
+
+{chunk_text}
+
+Generează PTE-ul complet pentru textul de mai sus.
