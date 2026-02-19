@@ -10,7 +10,7 @@ _config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.
 with open(_config_path, 'r', encoding='utf-8') as _f:
     _cfg = json.load(_f)
 
-anthropic_api_key = _cfg["anthropicApiKey"]
+anthropic_api_key = os.environ.get("ANTHROPIC_API_KEY") or _cfg.get("anthropicApiKey")
 creatio_base_url = _cfg["creatioBaseUrl"]
 creatio_auth_secret = _cfg["creatioAuthSecret"]
 listening_host = _cfg["listeningHost"]

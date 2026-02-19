@@ -138,7 +138,7 @@ def generate_pte(methodology_pages, api_key, model, progress_callback=None):
             f"Generat cu succes! Total: {total_input} input tokeni, {total_output} output tokeni"
         )
 
-    return '\n\n'.join(all_results)
+    return '\n\n'.join(all_results), total_input, total_output
 
 
 def _load_reference_style():
@@ -660,7 +660,7 @@ class PTEPage:
             self._log("Pas 2/3: Se generează PTE prin Claude API...")
             self._log(f"  Model: {self.app.model.get()}")
 
-            pte_text = generate_pte(
+            pte_text, _, _ = generate_pte(
                 pages,
                 api_key=self.app.api_key.get(),
                 model=self.app.model.get(),
