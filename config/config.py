@@ -15,3 +15,6 @@ creatio_base_url = _cfg["creatioBaseUrl"]
 creatio_auth_secret = _cfg["creatioAuthSecret"]
 listening_host = _cfg["listeningHost"]
 listening_port = _cfg["listeningPort"]
+
+# Alias used by creatio_service.py from the reference implementation
+base_url = creatio_base_url

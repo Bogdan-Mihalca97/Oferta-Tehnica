@@ -1,14 +1,15 @@
 """
-File download/upload operations against the Creatio EntityFileService.
+File download/upload operations against the Creatio EntityFileService,
+routed through the proxy via CreatioGatewayService.
 """
 import uuid
 
-from services.integration.creatio_client import CreatioClient
+from services.integration.creatio_gateway_service import CreatioGatewayService
 
 
 class CreatioFileService:
-    def __init__(self, client: CreatioClient):
-        self.client = client
+    def __init__(self, gateway: CreatioGatewayService):
+        self.gateway = gateway
 
     def download_file(self, doc_id: str) -> bytes:
         """Download a file from Creatio by its document ID.
@@ -16,9 +17,8 @@ class CreatioFileService:
         Endpoint: GET {baseUrl}/0/ServiceModel/EntityFileService.svc/GetFile?id={doc_id}
         Returns raw file bytes.
         """
-        url = f"{self.client.base_url}/0/ServiceModel/EntityFileService.svc/GetFile?id={doc_id}"
-        response = self.client.get(url)
-        return response.content
+        url = f"{self.gateway.base_url}/0/ServiceModel/EntityFileService.svc/GetFile?id={doc_id}"
+        return self.gateway.execute_get_bytes(url)
 
     def upload_file(self, record_id: str, file_name: str, file_bytes: bytes) -> dict:
         """Upload a file to Creatio and attach it to a record.
@@ -27,7 +27,7 @@ class CreatioFileService:
         Posts multipart form with file bytes and metadata.
         Returns the parsed JSON response.
         """
-        url = f"{self.client.base_url}/0/ServiceModel/EntityFileService.svc/UploadFile"
+        url = f"{self.gateway.base_url}/0/ServiceModel/EntityFileService.svc/UploadFile"
         file_id = str(uuid.uuid4())
 
         files = {
@@ -39,5 +39,4 @@ class CreatioFileService:
             'fileId': file_id,
         }
 
-        response = self.client.post_multipart(url, files=files, data=data)
-        return response.json()
+        return self.gateway.execute_post_multipart(url, files=files, data=data)

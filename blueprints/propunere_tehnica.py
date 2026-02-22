@@ -6,12 +6,10 @@ import os
 import tempfile
 
 import fitz  # PyMuPDF
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 
 from app import generate_pte, build_docx
 from config.config import anthropic_api_key
-from services.integration.creatio_client import CreatioClient
-from services.integration.creatio_file_service import CreatioFileService
 
 MODEL = 'claude-opus-4-6'
 
@@ -33,10 +31,10 @@ def generate_proceduri_tehnice_de_executie():
             missing = [f for f, v in [('RecordId', record_id), ('DocId', doc_id)] if not v]
             return jsonify({'success': False, 'error': f"Missing required fields: {', '.join(missing)}"}), 400
 
+        file_service = current_app.config['creatio_file_service']
+
         # Step 1: Download PDF bytes from Creatio
         try:
-            client = CreatioClient()
-            file_service = CreatioFileService(client)
             pdf_bytes = file_service.download_file(doc_id)
         except Exception as e:
             return jsonify({'success': False, 'error': f"Failed to download PDF from Creatio: {e}"}), 500
